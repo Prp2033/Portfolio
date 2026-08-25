@@ -127,5 +127,29 @@
 
             </div>
         </main>
+        <!-- Add this script tag -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function() {
+      // Initialize with your Public Key
+      emailjs.init("cmHddCIDfE68uOuqD");
+   })();
+</script>
+
+<script>
+    document.getElementById('contact_form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Send the form using your Service ID and Template ID
+        emailjs.sendForm('service_26oq4xa', 'template_33ufqkh', this)
+            .then(function() {
+                alert('Message envoyé avec succès !');
+                // Optional: Reset form
+                document.querySelector('.contact_form').reset();
+            }, function(error) {
+                alert('Échec de l\'envoi: ' + JSON.stringify(error));
+            });
+    });
+</script>   
     </body>
 </html>
