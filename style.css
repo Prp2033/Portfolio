@@ -224,6 +224,30 @@ h5,
     }
 }
 
+.flag {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 14px;
+    padding-left: 26px; /* Adjust based on flag size */
+}
+
+.flag-fr {
+    background-image: url('flag-fr.png');
+}
+
+.flag-gb {
+    background-image: url('flag-gb.png');
+}
+
+.flag-es {
+    background-image: url('flag-es.png');
+}
+
+.flag-ru {
+    background-image: url('flag-ru.png');
+}
+
 /* --- Hero Section --- */
 .hero_content {
     padding: var(--space-3xl) 0;
@@ -258,6 +282,10 @@ section#hero {
     transform: skewX(-10deg);
     position: relative;
     z-index: 2; /* Ensures skewed content stays above background */
+}
+
+.about_content p {
+    text-align: center;
 }
 
 @media (max-width: 468px) {
@@ -398,7 +426,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-textarea {
+textarea,
+select{
     width: 100%;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
