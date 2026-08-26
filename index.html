@@ -126,28 +126,7 @@
                     </div>
                 </section>
             </footer>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">             /* EmailJS scripts */
-    </script>
-
-    <script type="text/javascript">         /* Initialize with my PublicKey */
-    (function() {
-        emailjs.init("cmHddCIDfE68uOuqD");  
-    })();
-    </script>
-
-    <script>        /* Makes sure that the script targets the good ID */     
-    document.getElementById('contact_form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        emailjs.sendForm('service_26oq4xa', 'template_33ufqkh', this)       /* Sends via EmailJS */
-            .then(function() {
-                alert('Message envoyé avec succès !');
-                document.querySelector('.contact_form').reset();        /* Empties the form */
-            }, function(error) {
-                console.error('Échec de l\'envoi:', error);
-                alert('Échec de l\'envoi, veuillez réessayer.');
-            });
-    });
-    </script>   
+   
     
     </body>
 </html>
