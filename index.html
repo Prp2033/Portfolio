@@ -94,6 +94,7 @@
 
                 <section id="contact">
                     <div class="wrapper">
+                        <div class="contact_top">
                         <div class="text_left">
                             <p>
                                 Vous souhaitez que l'on travaille ensemble ? <br>
@@ -101,42 +102,67 @@
                             </p>
                         </div>
 
-            <div class="wrapper_inner">
-                <h5 class="h3">Me Contacter</h5>        
-                <form id="contact_form" action="javascript:void(0);" method="post" class="contact_form">
-                <div class="flex">
-                    <div class="form_group">
-                        <label for="name">NOM</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div class="form_group">
-                        <label for="email">EMAIL</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                </div>           
+                         <div class="wrapperShare">
+            <div class="menu-btn"><img src="share.png" alt="Partager" width="24" height="24"></i></div>
+
+                <ul class="menu">
+                    <li style="--i:0; --clr:#3b5998;">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://prp2033.github.io/Portfolio/" target="_blank"><img src="facebook.png" alt="Facebook" width="24" height="24"></a>
+                    </li>
+                    <li style="--i:1; --clr:#1da1f2;">
+                        <a href="https://twitter.com/intent/tweet?url=https://prp2033.github.io/Portfolio/&text=Regarde%20ce%20site%20!" target="_blank"><img src="twitter.png" alt="Twitter" width="24" height="24"></a>
+                    </li>
+                    <li style="--i:2; --clr:#e74c3c;">
+                         <a href="mailto:?subject=Regarde%20ce%20site%20!&body=Je%20te%20recommande%20ce%20site%20:%20https://prp2033.github.io/Portfolio/"><img src="mail.png" alt="Email" width="24" height="24"></a>
+                    </li>
+                    <li style="--i:3; --clr:#25d366;">
+                        <a href="https://wa.me/?text=Regarde%20ce%20site%20!%20https://prp2033.github.io/Portfolio/" target="_blank"><img src="whatsapp.png" alt="WhatsApp" width="24" height="24"></a>
+                    </li>
+                    <li style="--i:4; --clr:#0077b5;">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://prp2033.github.io/Portfolio/" target="_blank"><img src="linkedin.png" alt="LinkedIn" width="24" height="24"></a>
+                    </li>
+                </ul>
             </div>
-                                 <div class="form_group">
-                        <label for="taches">TÂCHES</label>
-                         <select id="taches" name="tâches" required>
-                            <option value="" disabled selected>Ce dont j'ai besoin</option>
-                            <option value="option1">Création de site</option>
-                            <option value="option2">Dépannage</option>
-                            <option value="option3">Traduction</option>
-                            <option value="option4">Enseignement de langue</option>
-                            <option value="option5">Divers</option>
-                        </select>
-                    </div>
-                    <div class="form_group">
-                        <label for="message">MESSAGE</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                        <button type="submit">ENVOYER UN MESSAGE</button>
-                </form>
-                <div id="success_message" class="success_message">
-                <span class="checkmark">✓</span>
-                Message envoyé avec succès !
-                </div>
-                    </div>
+        </div>
+
+            <div class="wrapper_inner">
+    <h5 class="h3">Me Contacter</h5>
+    <form id="contact_form" action="javascript:void(0);" method="post" class="contact_form">
+        <div class="flex">
+            <div class="form_group">
+                <label for="name">NOM</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form_group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+        </div>
+        <div class="form_group">
+            <label for="taches">TÂCHES</label>
+            <select id="taches" name="tâches" required>
+                <option value="" disabled selected>Ce dont j'ai besoin</option>
+                <option value="option1">Création de site</option>
+                <option value="option2">Dépannage</option>
+                <option value="option3">Traduction</option>
+                <option value="option4">Enseignement de langue</option>
+                <option value="option5">Divers</option>
+            </select>
+        </div>
+        <div class="form_group">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">ENVOYER UN MESSAGE</button>
+    </form>
+    <div id="success_message" class="success_message">
+        <span class="checkmark">✓</span>
+        Message envoyé avec succès !
+    </div>
+</div>
+
+       
+        </div>
 
             <footer>
                 <section id="footer">
