@@ -92,27 +92,30 @@
                                 Ce sera avec plaisir !
                             </p>
                         </div>
-                        <div class="wrapper_inner">
-    <h5 class="h3">Me Contacter</h5>
-    <!-- CORRECTION 1 : Ajout de id="contact_form" et action="javascript:void(0);" -->
-    <form id="contact_form" action="javascript:void(0);" method="post" class="contact_form">
-        <div class="flex">
-            <div class="form_group">
-                <label for="name">NOM</label>
-                <input type="text" id="name" name="name" required />
+
+            <div class="wrapper_inner">
+                <h5 class="h3">Me Contacter</h5>        
+                <form id="contact_form" action="javascript:void(0);" method="post" class="contact_form">
+                <div class="flex">
+                    <div class="form_group">
+                        <label for="name">NOM</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form_group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                </div>
             </div>
-            <div class="form_group">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form_group">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                        <button type="submit">ENVOYER UN MESSAGE</button>
+                </form>
             </div>
-        </div>
-        <div class="form_group">
-            <label for="message">MESSAGE</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">ENVOYER UN MESSAGE</button>
-    </form>
-</div>
+
             <footer>
                 <section id="footer">
                     <div class="wrapper">
@@ -122,30 +125,30 @@
                     </div>
                 </section>
             </footer>
-<!-- Vos scripts EmailJS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function() {
-        // Initialisation avec votre Public Key
-        emailjs.init("cmHddCIDfE68uOuqD");
-    })();
-</script>
 
-<script>
-    // CORRECTION 2 : S'assurer que le script cible le bon ID
+        /* EmailJS scripts */
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">         /* Initialize with my PublicKey */
+    (function() {
+        emailjs.init("cmHddCIDfE68uOuqD");  
+    })();
+    </script>
+
+    <script>        /* Makes sure that the script targets the good ID */     
     document.getElementById('contact_form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Bloque l'envoi natif qui causait l'erreur 405
-        
-        // Envoi via EmailJS
-        emailjs.sendForm('service_26oq4xa', 'template_33ufqkh', this)
+        event.preventDefault();
+        emailjs.sendForm('service_26oq4xa', 'template_33ufqkh', this)       /* Sends via EmailJS */
             .then(function() {
                 alert('Message envoyé avec succès !');
-                document.querySelector('.contact_form').reset(); // Vide le formulaire
+                document.querySelector('.contact_form').reset();        /* Empties the form */
             }, function(error) {
                 console.error('Échec de l\'envoi:', error);
                 alert('Échec de l\'envoi, veuillez réessayer.');
             });
     });
-</script>   
+    </script>   
+    
     </body>
 </html>
