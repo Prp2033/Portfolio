@@ -4,10 +4,14 @@ document.getElementById('contact_form').addEventListener('submit', function(even
   event.preventDefault();
   emailjs.sendForm('service_26oq4xa', 'template_33ufqkh', this)
     .then(function() {
-      alert('Message envoyé avec succès !');
-      document.querySelector('.contact_form').reset();
-    }, function(error) {
-      console.error("Échec de l'envoi:", error);
-      alert('Échec de l\'envoi, veuillez réessayer.');
-    });
+    document.querySelector('.contact_form').reset();
+    var msg = document.getElementById('success_message');
+    msg.classList.add('show');
+    setTimeout(function() {
+        msg.classList.remove('show');
+    }, 4000);
+}, function(error) {
+    console.error("Échec de l'envoi:", error);
+    alert('Échec de l\'envoi, veuillez réessayer.');
+});
 });   
