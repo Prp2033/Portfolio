@@ -1,16 +1,13 @@
-        /**
-         * CORE CONFIG
-         * This powers everything from utility class generation to breakpoints
-         * to enabling/disabling pre-built components/utilities.
-         */
-        /* Box sizing rules */
+/* CORE CONFIGURATION */
+/* Box sizing rules and global font */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    font-family: OCR A Std, monospace;
+  box-sizing: border-box;
+  font-family: OCR A Std, monospace;
 }
-        /* Remove default margin */
+
+/* Reset default margins for common elements */
 body,
 h1,
 h2,
@@ -21,64 +18,68 @@ figure,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  margin: 0;
 }
-        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+/* Remove list styles on role="list" elements */
 ul[role="list"],
 ol[role="list"] {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-        /* Set core root defaults */
-html:focus-within{
-    scroll-behavior: smooth;
+/* Smooth scrolling behavior when focusing inside the document */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-        /* Set core body fefaults */
+/* Body defaults */
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    letter-spacing: -0.01em;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  letter-spacing: -0.01em;
 }
 
-        /* All elements that don't have a class get default styles */
-a:not([class]){
-    text-decoration-skip-ink: auto;
+/* Remove underline skip for links without class */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
-        /* Make images easier to work with */
+
+/* Make images responsive */
 img,
 picture {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
-        /* Inherit fonts for inputs and buttons */
+/* Inherit fonts for form elements */
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
+/* Accessibility: reduce motion if preferred */
 @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 }
 
+/* Focus outlines for accessibility */
 :focus {
-    outline: 2px dashed #00ff19;
-    outline-offset: 0.25rem;
+  outline: 2px dashed #00ff19;
+  outline-offset: 0.25rem;
 }
 
 main:focus {
-    outline: none;
+  outline: none;
 }
 
-        /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
+/* ROOT VARIABLES FOR FONT SIZES AND SPACING */
 :root {
+  /* Font size scale */
   --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
@@ -87,11 +88,8 @@ main:focus {
   --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
   --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
   --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
-}
 
-        /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
-:root {
+  /* Spacing scale */
   --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
   --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
   --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
@@ -103,542 +101,468 @@ main:focus {
   --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
 }
 
+/* Heading sizes */
 h1,
 .h1 {
   font-size: var(--step-5);
 }
-
 h2,
 .h2 {
   font-size: var(--step-4);
 }
-
 h3,
 .h3 {
   font-size: var(--step-3);
 }
-
 h4,
 .h4 {
   font-size: var(--step-2);
 }
-
 h5,
 .h5 {
   font-size: var(--step-1);
 }
 
-        /* Define some constants */
+/* FLEX Utility Classes */
 .flex {
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
 }
 @media (max-width: 468px) {
-    .flex {
-        flex-wrap: wrap;
-    }
+  .flex {
+    flex-wrap: wrap;
+  }
 }
 .flex_center {
-    justify-content: center;
+  justify-content: center;
 }
 .flex_around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 .flex_between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 @media (max-width: 468px) {
-    .flex_around {
-        justify-content: center;
-    }
-    .flex_between {
-        justify-content: center;
-    }
+  .flex_around,
+  .flex_between {
+    justify-content: center;
+  }
 }
+
+/* Text alignment helpers */
 .text_center {
-    text-align: center;
+  text-align: center;
 }
 .text_left {
-    text-align: left;
+  text-align: left;
 }
 .text_right {
-    text-align: right;
+  text-align: right;
 }
 
-        /* Define spacing */
+/* Spacing helpers */
 .padding-top-3xs {
-    padding: var(--space-3xs);
+  padding: var(--space-3xs);
 }
 
-        /* Create the wrappers */
+/* Wrapper containers */
 .wrapper {
-    width: 100%;
-    max-width: 1240px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 .wrapper_inner {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-        /* Style the header */
+/* Header styling */
 .site_header {
-    padding: var(--space-s) 0;
-    background: rgba(255, 254, 216, 1);
+  padding: var(--space-s) 0;
+  background: rgba(255, 254, 216, 1);
 }
-
 .site_header_nav ul li a {
-    text-decoration: none;
-    color: #000000;
+  text-decoration: none;
+  color: #000;
 }
-/* --- CONTINUOUS BACKGROUND WRAPPER (hero -> apropos -> oeuvres) --- */
+
+/* Continuous background wrapper for hero/sections */
 .continuous-bg-wrapper {
-    position: relative;
-    /* Ensures the pseudo-element is contained but allows sections to flow */
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-
-/* The pseudo-element creates the single continuous image behind all three sections */
 .continuous-bg-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Spans the full height of hero + apropos + oeuvres combined */
-    background: url("background_image.jpg") no-repeat top center;
-    background-size: cover;
-    background-attachment: scroll;
-    z-index: -1; /* Places image behind content */
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("background_image.jpg") no-repeat top center;
+  background-size: cover;
+  background-attachment: scroll;
+  z-index: -1;
 }
-
-/* On narrow screens the wrapper gets much taller (stacked content), so the
-   focal point of the photo can drift off-frame. Nudge background-position
-   here if the subject gets cropped awkwardly on your phone. */
 @media (max-width: 600px) {
-    .continuous-bg-wrapper::before {
-        background-position: top center;
-    }
+  .continuous-bg-wrapper::before {
+    background-position: top center;
+  }
 }
 
+/* Button Styles */
 .btn {
-    display: inline-block;
-    text-decoration: none;
-    width: 150px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    border-radius: 50px;
-    background-image: linear-gradient(135deg, #cee6fc 0%, #8377ee 100%);
-    box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
-    outline: none;
-    cursor: pointer;
-    border: none;
-    font-size: 24px;
-    font-family: "Dosis", sans-serif;
-    color: white;
-    transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  font-family: "Dosis", sans-serif;
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
-
 .btn:hover {
-    transform: translateY(3px);
-    box-shadow: none;
+  transform: translateY(3px);
+  box-shadow: none;
 }
-
 .btn:active {
-    opacity: 0.5;
-}   
+  opacity: 0.5;
+}
 
+/* Flag icons */
 .flag {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 20px 14px;
-    padding-left: 26px; /* Adjust based on flag size */
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px 14px;
+  padding-left: 26px;
 }
-
 .flag-fr {
-    background-image: url('flag-fr.png');
+  background-image: url('flag-fr.png');
 }
-
 .flag-gb {
-    background-image: url('flag-gb.png');
+  background-image: url('flag-gb.png');
 }
-
 .flag-es {
-    background-image: url('flag-es.png');
+  background-image: url('flag-es.png');
 }
-
 .flag-ru {
-    background-image: url('flag-ru.png');
+  background-image: url('flag-ru.png');
 }
 
-/* --- Hero Section --- */
+/* Hero Section */
 .hero_content {
-    padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) 0;
 }
 .hero_content h1 {
-    margin-bottom: var(--space-s);
+  margin-bottom: var(--space-s);
 }
 .hero_social {
-    padding-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  color: rgb(14, 13, 13);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 16px 20px 20px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+/* Sections general styling */
 section {
-    padding: var(--space-2xl) var(--space-l);
-    position: relative; /* Ensures content sits above the background layer */
-    z-index: 1;
+  padding: var(--space-2xl) var(--space-l);
+  position: relative;
+  z-index: 1;
 }
-
 section#hero {
-    /* CRITICAL: Make background transparent so the wrapper's image shows through */
-    background-color: transparent;
-    /* Optional: Add a slight green tint if text needs contrast against the image */
-    /* background-color: rgba(0, 153, 43, 0.8); */ 
-    
-    padding-bottom: 4px;
-    color: #000000;
-    --color-accent: #8a2be2;
+  background-color: transparent;
+  padding-bottom: 4px;
+  color: #000;
+  --color-accent: #8a2be2;
 }
 
-/* --- A Propos Section --- */
+/* About section styling */
 .about_content {
-    padding: var(--space-xl) 0;
-    transform: skewX(-10deg);
-    position: relative;
-    z-index: 2; /* Ensures skewed content stays above background */
+  padding: var(--space-xl) 0;
+  transform: skewX(-10deg);
+  position: relative;
+  z-index: 2;
 }
-
 .about_content p {
-    text-align: center;
+  text-align: center;
 }
-
 @media (max-width: 468px) {
-    .about_content {
-        transform: skewX(0deg);
-    }
+  .about_content {
+    transform: skewX(0deg);
+  }
 }
-
 .about_figure {
-    padding: var(--space-xl) 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ccc;
-    display: inline-block;
-    padding: 5px;
-    /* Optional: Add a semi-transparent white bg to the figure so it's readable over the image */
-    background: rgba(255, 255, 255, 0.9); 
+  padding: var(--space-xl) 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+  display: inline-block;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.9);
 }
-
 .about_img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
 }
-
 .about_caption {
-    padding: var(--space-3xs) 0;
+  padding: var(--space-3xs) 0;
+  color: black !important;
 }
 
+/* Apropos section */
 section#apropos {
-    /* CRITICAL: Remove the solid purple background to let the image flow through */
-    background-color: transparent;
-       /* NEW: Text Color */
-    color: rgb(255, 254, 216); 
-    
-    /* Ensure links inside also use this color or a variant */
-    --color-accent: #ffd700; 
-    /* Optional: If you want a purple tint OVER the continuing image, uncomment below: */
-    /* background-color: rgba(69, 1, 64, 0.85); */
-    
-    color: #333;
-    --color-accent: #ffd700;
+  background-color: transparent;
+  color: rgb(255, 254, 216);
+  --color-accent: #ffd700;
 }
-/* Optional: Ensure the heading and paragraph specifically inherit this if overridden elsewhere */
 section#apropos h2,
 section#apropos p,
 section#apropos .about_caption {
-    color: rgb(255, 254, 216);
-}
-        /* Oeuvres section NECESSAIRE DE RAJOUTER DES LOGOS DANS L HTML POUR QUE CA FASSE EFFET; a partir de la ligne 75 selon le modele freecodecamp*/
-.work_logos {
-    margin-top: var(--space-xl);
+  color: rgb(255, 254, 216);
 }
 
+/* Oeuvres section with gradient background */
 section#oeuvres {
-    /* section#apropos is transparent, so at its bottom you're seeing the bare photo
-       with no tint. Starting this gradient at 0% opacity and easing into the purple
-       tint over the first ~20% matches that exactly, so there's no hard color line
-       at that seam. Symmetrically, the last 20% now fades OUT of purple and into
-       rgba(43, 71, 117, 1) — the exact color .continuous-gradient-wrapper::before
-       starts at for #contact — so the oeuvres/contact seam disappears too.
-       Stops are in %, which scale to whatever height the section ends up at on any
-       screen, so this stays responsive with no media query needed. */
-    background: linear-gradient(
-        to bottom,
-        rgba(66, 25, 86, 0) 0%,
-        rgba(66, 25, 86, 0.55) 20%,
-        rgba(66, 25, 86, 0.55) 80%,
-        rgba(43, 71, 117, 1) 100%
-    );
-    color: rgb(255, 254, 216); /* was #0c0c0c, unreadable against a photo */
-    --color-accent: #2e8b57;
+  background: linear-gradient(
+    to bottom,
+    rgba(66, 25, 86, 0),
+    rgba(66, 25, 86, 0.55) 20%,
+    rgba(66, 25, 86, 0.55) 80%,
+    rgba(43, 71, 117, 1) 100%
+  );
+  color: rgb(255, 254, 216);
+  --color-accent: #2e8b57;
 }
-       /* Magic share menu start */
+
+/* Share menu styling */
 .wrapperShare {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 0;
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0;
 }
-
 .wrapperShare:hover .menu li {
-    opacity: 1;
-    transform: rotate(calc(360deg / 5 * var(--i)))
-               translate(140px)
-               rotate(calc(-360deg / 5 * var(--i)));
-               scale: 1;
+  opacity: 1;
+  transform: rotate(calc(360deg / 5 * var(--i))) translate(140px) rotate(calc(-360deg / 5 * var(--i))) scale(1);
 }
-
 .contact_top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
-
 .menu-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    background: #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    transition: 0.5s;
-    pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: 0.5s;
+  pointer-events: none;
 }
-
 .menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
-
 .menu li {
-    position: absolute;
-    top: -25px;
-    left: -25px;
-    list-style: none;
-    transition: 0.5s;
-    transition-delay: calc(0.05s * var(--i));
-    transform-origin: 25px 25px;
-    transform: rotate(calc(360deg / 5 * var(--i)))
-               translate(140px)
-               rotate(calc(-360deg / 5 * var(--i)));
-    scale: 0;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  list-style: none;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--i));
+  transform-origin: 25px 25px;
+  transform: rotate(calc(360deg / 5 * var(--i))) translate(140px) rotate(calc(-360deg / 5 * var(--i))) scale: 0;
 }
-
-
 .menu li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #fff;
-    color: var(--clr);
-    font-size: 20px;
-    text-decoration: none;
-    transition: 0.3s;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--clr);
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
 }
-
 .menu li a:hover {
-    box-shadow:
-        0 0 0 2px var(--clr),
-        0 0 0 6px #fff;
+  box-shadow: 0 0 0 2px var(--clr), 0 0 0 6px #fff;
 }
-
 .menu li a img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
-        /* Magic share menu end */
 
-/* --- CONTINUOUS GRADIENT WRAPPER (contact -> footer) --- */
+/* Continuous gradient wrapper (contact -> footer) */
 .continuous-gradient-wrapper {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-
 .continuous-gradient-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Spans the full height of contact + footer combined */
-    background: linear-gradient(
-        179deg,
-        rgba(43, 71, 117, 1) 0%,
-        rgba(0, 98, 130, 1) 20%,
-        rgba(221, 174, 176, 1) 55%,
-        rgba(90, 62, 74, 1) 78%,
-        #1a1a1a 100%
-    );
-    z-index: -1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    179deg,
+    rgba(43, 71, 117, 1) 0%,
+    rgba(0, 98, 130, 1) 20%,
+    rgba(221, 174, 176, 1) 55%,
+    rgba(90, 62, 74, 1) 78%,
+    #1a1a1a 100%
+  );
+  z-index: -1;
+  pointer-events: none;
 }
 
-      /* Contact section */
+/* Contact section */
 section#contact {
-    /* The gradient now lives on the wrapper's ::before so it can continue into the footer */
-    background: transparent;
-    
-    padding: var(--space-2xl) var(--space-l); /* Ensures consistent spacing */
-    color: rgb(255, 254, 216); /* Default light text color for the section */
+  background: transparent;
+  padding: var(--space-2xl) var(--space-l);
+  color: rgb(255, 254, 216);
 }
-
 .contact_form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-    /* Translucent background with blur (Glassmorphism) */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    
-    /* Slight shadow and border */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    
-    padding: 40px;
-    border-radius: 8px;
-    max-width: 600px; /* Optional: Keeps form from getting too wide */
-    margin: 0 auto;   /* Centers the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
 .form_group {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: rgb(255, 254, 216);
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: rgb(255, 254, 216);
 }
-
 input[type="text"],
 input[type="email"],
 textarea,
-select{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.2); /* Darker input background for contrast */
-    color: rgb(255, 254, 216);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(255, 254, 216);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
-
 input::placeholder,
 textarea::placeholder {
-    color: rgba(255, 254, 216, 0.6);
+  color: rgba(255, 254, 216, 0.6);
 }
-
 textarea {
-    resize: vertical;
-    height: 150px;
+  resize: vertical;
+  height: 150px;
 }
-
 button[type="submit"] {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(255, 254, 216);
-    color: #2B4775;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(255, 254, 216);
+  color: #2B4775;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 button[type="submit"]:hover {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
-
 .success_message {
-    display: none;
-    text-align: center;
-    padding: 15px;
-    margin-top: 10px;
-    background: rgba(46, 204, 113, 0.15);
-    border: 1px solid rgba(46, 204, 113, 0.4);
-    border-radius: 4px;
-    color: rgb(255, 254, 216);
-    font-weight: bold;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  margin-top: 10px;
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  border-radius: 4px;
+  color: rgb(255, 254, 216);
+  font-weight: bold;
 }
-
 .success_message.show {
-    display: block;
-    animation: fadeInUp 0.5s ease forwards;
+  display: block;
+  animation: fadeInUp 0.5s ease forwards;
 }
-
 .checkmark {
-    display: inline-block;
-    font-size: 1.5rem;
-    color: #2ecc71;
-    animation: pop 0.4s ease 0.2s both;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #2ecc71;
+  animation: pop 0.4s ease 0.2s both;
 }
-
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 @keyframes pop {
-    0% {
-        transform: scale(0);
-    }
-    70% {
-        transform: scale(1.3);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* Footer section */
+/* Footer styling */
 section#footer {
-    padding: var(--space-l) var(--space-l);
-    background: transparent; /* was #1a1a1a, now lets the gradient wrapper show through */
-    color: rgb(255, 254, 216);
+  padding: var(--space-l) var(--space-l);
+  background: transparent;
+  color: rgb(255, 254, 216);
 }
