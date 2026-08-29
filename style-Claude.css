@@ -349,6 +349,7 @@ section#oeuvres {
   color: rgb(255, 254, 216);
   --color-accent: #2e8b57;
 }
+
 /* Share menu styling */
 .wrapperShare {
   position: relative;
@@ -430,6 +431,7 @@ section#oeuvres {
   max-height: 100%;
   margin: auto;
 }
+
 /* Share menu - mobile layout */
 @media (max-width: 480px) {
   /* Stack the text and the share button instead of side-by-side */
@@ -439,11 +441,13 @@ section#oeuvres {
     text-align: center;
     gap: var(--space-s);
   }
+
   /* The wrapper only needs to be as big as the visible round button now */
   .wrapperShare {
     width: 60px;
     height: 60px;
   }
+
   /* Detach the popup from the button's position so it can't run off-screen,
      and center its 0x0 origin point on the middle of the viewport instead */
   .menu {
@@ -452,12 +456,14 @@ section#oeuvres {
     left: 50%;
     z-index: 999;
   }
+
   /* Smaller radius so the fan of icons comfortably fits inside a phone screen */
   .wrapperShare:hover .menu li,
   .wrapperShare.active .menu li {
     transform: rotate(calc(360deg / 5 * var(--i))) translate(100px) rotate(calc(-360deg / 5 * var(--i))) scale(1);
   }
 }
+
 /* Continuous gradient wrapper (contact -> footer) */
 .continuous-gradient-wrapper {
   position: relative;

@@ -15,3 +15,14 @@ document.getElementById('contact_form').addEventListener('submit', function(even
     alert('Échec de l\'envoi, veuillez réessayer.');
 });
 });   
+
+var shareWrapper = document.querySelector('.wrapperShare');
+if (shareWrapper) {
+  shareWrapper.addEventListener('click', function (event) {
+    event.stopPropagation();
+    shareWrapper.classList.toggle('active');
+  });
+  document.addEventListener('click', function () {
+    shareWrapper.classList.remove('active');
+  });
+}
