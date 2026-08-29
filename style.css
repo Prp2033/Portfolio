@@ -430,6 +430,7 @@ section#oeuvres {
   max-height: 100%;
   margin: auto;
 }
+ 
 /* Share menu - mobile layout */
 @media (max-width: 480px) {
   /* Stack the text and the share button instead of side-by-side */
@@ -439,19 +440,16 @@ section#oeuvres {
     text-align: center;
     gap: var(--space-s);
   }
+ 
   /* The wrapper only needs to be as big as the visible round button now */
   .wrapperShare {
     width: 60px;
     height: 60px;
   }
-  /* Detach the popup from the button's position so it can't run off-screen,
-     and center its 0x0 origin point on the middle of the viewport instead */
-  .menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-  }
+ 
+  /* The button is now centered on the page (thanks to .contact_top above),
+     so the popup can stay anchored to it instead of jumping to the viewport center */
+ 
   /* Smaller radius so the fan of icons comfortably fits inside a phone screen */
   .wrapperShare:hover .menu li,
   .wrapperShare.active .menu li {

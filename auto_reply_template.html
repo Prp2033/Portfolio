@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light" />
+<meta name="supported-color-schemes" content="light" />
+<title>Merci pour votre message</title>
+<style>
+  @media only screen and (max-width: 600px) {
+    .container { width: 100% !important; }
+    .stack-padding { padding-left: 24px !important; padding-right: 24px !important; }
+  }
+  .btn-cta a:hover { opacity: 0.85; }
+
+  /* Verrouille nos couleurs si un client respecte prefers-color-scheme (Apple Mail, etc.) */
+  @media (prefers-color-scheme: dark) {
+    .page-bg { background-color: #EFEBDD !important; }
+    .card-bg { background-color: #FFFED8 !important; }
+    .header-bg, .footer-bg { background-color: #0d5179 !important; }
+    .accent-bg { background-color: #411957 !important; }
+    .recap-bg { background-color: #F6F3E4 !important; }
+    .btn-cta { background-color: #0d5179 !important; }
+    .btn-cta a { color: #FFFED8 !important; }
+    .body-text, .body-text p, .body-text h1, .body-text strong { color: #0d5179 !important; }
+    .accent-text { color: #411957 !important; }
+    .light-text, .light-text p { color: #FFFED8 !important; }
+  }
+
+  /* Verrouille nos couleurs pour Outlook.com / Outlook mobile, qui marquent
+     les elements convertis avec les attributs data-ogsc / data-ogsb */
+  [data-ogsc] .page-bg, [data-ogsb] .page-bg { background-color: #EFEBDD !important; }
+  [data-ogsc] .card-bg, [data-ogsb] .card-bg { background-color: #FFFED8 !important; }
+  [data-ogsc] .header-bg, [data-ogsb] .header-bg,
+  [data-ogsc] .footer-bg, [data-ogsb] .footer-bg { background-color: #0d5179 !important; }
+  [data-ogsc] .accent-bg, [data-ogsb] .accent-bg { background-color: #411957 !important; }
+  [data-ogsc] .recap-bg, [data-ogsb] .recap-bg { background-color: #F6F3E4 !important; }
+  [data-ogsc] .btn-cta, [data-ogsb] .btn-cta { background-color: #0d5179 !important; }
+  [data-ogsc] .btn-cta a, [data-ogsb] .btn-cta a { color: #FFFED8 !important; }
+  [data-ogsc] .body-text, [data-ogsb] .body-text,
+  [data-ogsc] .body-text p, [data-ogsb] .body-text p,
+  [data-ogsc] .body-text h1, [data-ogsb] .body-text h1,
+  [data-ogsc] .body-text strong, [data-ogsb] .body-text strong { color: #0d5179 !important; }
+  [data-ogsc] .accent-text, [data-ogsb] .accent-text { color: #411957 !important; }
+  [data-ogsc] .light-text, [data-ogsb] .light-text,
+  [data-ogsc] .light-text p, [data-ogsb] .light-text p { color: #FFFED8 !important; }
+</style>
+</head>
+<body class="page-bg" style="margin:0; padding:0; background-color:#EFEBDD;">
+
+  <!-- Texte d'apercu (visible dans la boite de reception, invisible dans l'email) -->
+  <div style="display:none; font-size:1px; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden; mso-hide:all;">
+    Votre message est bien arrivé, je reviens vers vous très vite !
+    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="page-bg" bgcolor="#EFEBDD" style="background-color:#EFEBDD;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+
+        <table role="presentation" class="container card-bg" width="600" cellpadding="0" cellspacing="0" bgcolor="#FFFED8" style="width:600px; max-width:600px; background-color:#FFFED8; border-radius:12px; overflow:hidden;">
+
+          <!-- En-tete -->
+          <tr>
+            <td class="header-bg light-text" bgcolor="#2B4775" style="background-color:#0d5179; padding:32px 40px; text-align:center; font-family: 'Courier New', Courier, monospace;">
+              <p style="margin:0; color:#FFFED8; font-size:12px; letter-spacing:4px; text-transform:uppercase; opacity:0.65;">Developpement Web &amp; Traductions</p>
+              <p style="margin:8px 0 0; color:#FFFED8; font-size:24px; font-weight:bold; letter-spacing:1px;">Philippe 'R Pratique</p>
+            </td>
+          </tr>
+
+          <!-- Barre d'accent -->
+          <tr>
+            <td class="accent-bg" bgcolor="#411957" style="height:4px; line-height:4px; font-size:0; background-color:#411957;">&nbsp;</td>
+          </tr>
+
+          <!-- Corps -->
+          <tr>
+            <td class="stack-padding body-text" style="padding:40px; font-family: 'Courier New', Courier, monospace; color:#0d5179;">
+
+              <p class="accent-text" style="margin:0 0 8px; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#411957; font-weight:bold;">&gt; Message reçu</p>
+              <h1 style="margin:0 0 20px; font-size:22px; line-height:1.3; color:#0d5179;">Bonjour {{name}},</h1>
+
+              <p style="margin:0 0 16px; font-size:15px; line-height:1.6;">
+                Merci pour votre intérêt&nbsp;! Votre message est bien arrivé et je reviens vers vous dans les plus brefs délais, généralement sous 24 à 48h.
+              </p>
+              <p style="margin:0 0 28px; font-size:15px; line-height:1.6;">
+                En attendant, voici un petit récapitulatif de votre demande&nbsp;:
+              </p>
+
+              <!-- Encadre recapitulatif -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="recap-bg" bgcolor="#F6F3E4" style="background-color:#F6F3E4; border-left:3px solid #411957; border-radius:6px;">
+                <tr>
+                  <td style="padding:20px 24px; font-size:13px; line-height:1.7;">
+                    <p style="margin:0 0 10px;"><strong class="accent-text" style="color:#411957;">Sujet&nbsp;:</strong> {{taches}}</p>
+                    <p style="margin:0 0 10px;"><strong class="accent-text" style="color:#411957;">Envoyé le&nbsp;:</strong> {{time}}</p>
+                    <p style="margin:0; white-space:pre-wrap;"><strong class="accent-text" style="color:#411957;">Message&nbsp;:</strong><br />{{message}}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Bouton -->
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:32px auto 0;">
+                <tr>
+                  <td align="center" class="btn-cta" bgcolor="#0d5179" style="background-color:#0d5179; border-radius:50px;">
+                    <a href="https://prp2033.github.io/Portfolio/" style="display:inline-block; padding:14px 32px; font-size:13px; font-weight:bold; letter-spacing:1px; color:#FFFED8; text-decoration:none;">RETOUR SUR LE PORTFOLIO</a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Pied de page -->
+          <tr>
+            <td class="footer-bg light-text" bgcolor="#0d5179" style="background-color:#0d5179; padding:24px 40px; text-align:center; font-family: 'Courier New', Courier, monospace;">
+              <p style="margin:0 0 4px; color:#FFFED8; font-size:12px; opacity:0.8;">Bien cordialement,</p>
+              <p style="margin:0; color:#FFFED8; font-size:13px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">L'équipe PrP</p>
+              <p style="margin:16px 0 0; color:#FFFED8; font-size:11px; opacity:0.5;">&copy; 2026 Philippe 'R Pratique</p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
