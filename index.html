@@ -159,6 +159,7 @@
                     <div class="wrapper_inner">
                         <h5 class="h3">Me Contacter</h5>
                         <form id="contact_form" action="javascript:void(0);" method="post" class="contact_form">
+                            <input type="hidden" id="time" name="time" />
                             <div class="flex">
                                 <div class="form_group">
                                     <label for="name">Nom</label>
@@ -171,13 +172,13 @@
                             </div>
                             <div class="form_group">
                                 <label for="taches">Tâches</label>
-                                <select id="taches" name="tâches" required>
+                                <select id="taches" name="taches" required>
                                     <option value="" disabled selected>Ce dont j'ai besoin</option>
-                                    <option value="option1">Création de site</option>
-                                    <option value="option2">Dépannage</option>
-                                    <option value="option3">Traduction</option>
-                                    <option value="option4">Enseignement de langue</option>
-                                    <option value="option5">Divers</option>
+                                    <option value="Création de site">Création de site</option>
+                                    <option value="Dépannage">Dépannage</option>
+                                    <option value="Traduction">Traduction</option>
+                                    <option value="Enseignement de langue">Enseignement de langue</option>
+                                    <option value="Divers">Divers</option>
                                 </select>
                             </div>
                             <div class="form_group">
